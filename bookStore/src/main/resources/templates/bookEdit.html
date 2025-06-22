@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="tr" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kitap Düzenle - Book Store</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    crossorigin="anonymous"
+  />
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #222;
+    }
+    nav.navbar {
+      background-color: #0d6efd;
+    }
+    nav.navbar .navbar-brand,
+    nav.navbar .nav-link {
+      color: #fff !important;
+    }
+    nav.navbar .nav-link.active {
+      font-weight: 600;
+    }
+    .form-container {
+      max-width: 500px;
+      margin: 3rem auto;
+      background: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(13, 110, 253, 0.2);
+    }
+    h4 {
+      color: #0d6efd;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-weight: 700;
+    }
+    label.form-label {
+      font-weight: 600;
+      color: #0a58ca;
+    }
+    input.form-control {
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+    }
+    input.form-control:focus {
+      border-color: #0d6efd;
+      box-shadow: 0 0 6px rgba(13, 110, 253, 0.4);
+    }
+    button.btn-primary {
+      display: block;
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+    button.btn-primary:hover {
+      background-color: #084298;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="/">Book Store</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="/">Ana Sayfa</a></li>
+          <li class="nav-item"><a class="nav-link" href="/available_books">Tüm Kitaplar</a></li>
+          <li class="nav-item"><a class="nav-link" href="/my_books">Kitaplarım</a></li>
+          <li class="nav-item"><a class="nav-link" href="/book_register">Yeni Kitap Ekle</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="form-container">
+    <h4>Kitap Düzenle</h4>
+    <form th:action="@{/save}" method="post" th:object="${book}">
+      <input type="hidden" name="id" th:value="${book.id}" />
+      
+      <div class="mb-4">
+        <label for="name" class="form-label">Kitap İsmi</label>
+        <input type="text" class="form-control" id="name" name="name" th:value="${book.name}" required placeholder="Kitap ismini girin">
+      </div>
+
+      <div class="mb-4">
+        <label for="author" class="form-label">Yazar</label>
+        <input type="text" class="form-control" id="author" name="author" th:value="${book.author}" required placeholder="Yazar ismini girin">
+      </div>
+
+      <div class="mb-4">
+        <label for="price" class="form-label">Fiyat</label>
+        <input type="number" step="0.01" min="0" class="form-control" id="price" name="price" th:value="${book.price}" required placeholder="Fiyatı girin">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Kaydet</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Book Store</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #222;
+      }
+      .hero-section {
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .hero-content {
+        max-width: 700px;
+      }
+      .hero-title {
+        font-weight: 700;
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        color: #0a2a66;
+      }
+      .hero-text {
+        font-size: 1.25rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        color: #4a4a4a;
+      }
+      .hero-image {
+        max-width: 350px;
+        border-radius: 10px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      }
+      @media (max-width: 767px) {
+        .hero-section {
+          flex-direction: column;
+          text-align: center;
+        }
+        .hero-image {
+          margin-top: 2rem;
+          max-width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Book Store</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="/">Ana Sayfa</a></li>
+            <li class="nav-item"><a class="nav-link" href="available_books">Tüm Kitaplar</a></li>
+            <li class="nav-item"><a class="nav-link" href="my_books">Kitaplarım</a></li>
+            <li class="nav-item"><a class="nav-link" href="book_register">Yeni Kitap Ekle</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
+    <section class="hero-section container my-5">
+      <div class="hero-content">
+        <h1 class="hero-title">Kütüphane Sistemine Hoşgeldiniz</h1>
+        <p class="hero-text">
+          Book Store ile kitap ekleme, silme, düzenleme ve durum takibi işlemlerini kolayca yapabilirsiniz.
+          Kitaplarınızı başlık, yazar veya durumlarına göre arayabilir, kütüphanenizi hızlı ve pratik şekilde yönetebilirsiniz.
+          Modern ve kullanıcı dostu arayüzü ile her işlem basit ve anlaşılırdır.
+        </p>
+      </div>
+      <img src="/images/bg.png" alt="Kütüphane Görseli" class="hero-image" />
+    </section>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  </body>
+</html>
